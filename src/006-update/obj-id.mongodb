@@ -1,0 +1,12 @@
+use("platzi_store")
+
+db.products.updateOne(
+    // query - document to be updated
+    {_id:ObjectId("6469035ddb0c8a3f2cdea9ec")},
+    // change => operators inc - para valores con numeros
+    {
+        $inc: {
+            price: 100,
+        }
+    }
+)
