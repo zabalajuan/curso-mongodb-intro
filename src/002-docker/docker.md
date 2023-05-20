@@ -1,6 +1,6 @@
 # up mongodbbase - levantar servicio
 
-''''sh
+'''sh
 docker-compose up -d mongodbbase
 '''
 # up check - revisar si el servicio esta corriendo
