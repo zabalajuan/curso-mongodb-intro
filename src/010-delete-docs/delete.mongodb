@@ -1,0 +1,13 @@
+use("platzi_store")
+
+// elimina un documento por el id dado
+/* db.products.deleteOne({_id: 1})
+ */
+// elimina un documento por el id, cuando es el generado por ongodb
+/* db.products.deleteOne({_id: ObjectId('id1234')})
+ */
+
+db.products.deleteMany(
+    //condicion/query que se evalua para eliminar los documentos
+    {price:100}
+)
