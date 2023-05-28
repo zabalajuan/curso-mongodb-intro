@@ -1,0 +1,45 @@
+use("sample_training")
+
+// AND implicit
+/* db.inspections.find({
+    sector:"Tax Preparers - 891",
+    result: "Unable to Locate"
+}).count()
+ */
+
+// AND explicit
+// se debe usar un array para indicar opciones [{},{},{}]
+/* db.inspections.find({
+    $and:[
+        {sector:"Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count() */ //6
+
+//OR
+// $or Explicit[{},{},{}]
+/* db.inspections.find({
+    $or:[
+        {sector:"Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count() //892 */
+
+//NOR
+// $nor Explicit[{},{},{}]
+/* db.inspections.find({
+    $nor:[
+        {sector:"Tax Preparers - 891"},
+        {result: "Unable to Locate"}
+    ]
+}).count() //79155 */
+
+db.inspections.find({
+    $nor:[
+        {result:"No Violation Issued"},
+        {result: "Unable to Locate"}
+    ]
+},{
+    result:1,
+    _id:0
+})
