@@ -1,0 +1,24 @@
+use("platzi_store")
+
+// Pag 1
+/* db.categories
+    .find()
+    .skip(0)
+    .limit(2) */
+//pag 2
+/* db.categories
+    .find()
+    .skip(2)
+    .limit(2) */
+
+//pag 3
+/* db.categories
+    .find()
+    .skip(4)
+    .limit(2) */
+
+//pag 2
+db.categories
+    .find()
+    .skip(9)
+    .limit(3)
