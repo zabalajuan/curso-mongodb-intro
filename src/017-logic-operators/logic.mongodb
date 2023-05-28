@@ -34,7 +34,7 @@ use("sample_training")
     ]
 }).count() //79155 */
 
-db.inspections.find({
+/* db.inspections.find({
     $nor:[
         {result:"No Violation Issued"},
         {result: "Unable to Locate"}
@@ -42,4 +42,14 @@ db.inspections.find({
 },{
     result:1,
     _id:0
-})
+}) */
+
+
+// NOT
+// $not = {} no recibe un array sino un atributo
+/* db.inspections.find({
+    result:{$not: {$regex: /Unable to Locate/}}
+}) */
+
+
+
