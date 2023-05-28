@@ -1,13 +1,12 @@
 use("platzi_store")
 
-db.inventory.drop()
+db.iot.drop()
 
-db.inventory.insertMany([
-  { _id: 1, item: { name: "ab", code: "123" }, qty: 15, tags: ["A", "B", "C"] },
-  { _id: 2, item: { name: "cd", code: "123" }, qty: 20, tags: ["B"] },
-  { _id: 3, item: { name: "ij", code: "456" }, qty: 25, tags: ["A", "B"] },
-  { _id: 4, item: { name: "xy", code: "456" }, qty: 30, tags: ["B", "A"] },
-  { _id: 5, item: { name: "mn", code: "000" }, qty: 20, tags: [["A", "B"], "C"] },
+db.iot.insertMany([
+  { _id: 1, sensor: "A001", date: "2022-01-01", readings: [1,2,3,4] },
+  { _id: 2, sensor: "A001", date: "2022-01-02", readings: [1,2,3,4] },
+  { _id: 3, sensor: "A002", date: "2022-01-01", readings: [1,2,3,4] },
+  { _id: 4, sensor: "A002", date: "2022-01-02", readings: [1,2,3,4] },
 ])
 
-db.inventory.find()
+db.iot.find()

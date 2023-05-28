@@ -1,0 +1,36 @@
+use("platzi_store")
+
+// $in, sirve para objetos y arrays
+//busqueda en values
+//db.inventory.find({qty:{$in:[20, 25]}})
+//busqueda en arrays, funciona como or
+//db.inventory.find({tags: {$in:["book","electronics"]}})
+
+//elementos donde no esten
+//db.inventory.find({qty:{$nin:[20, 25]}})
+//db.inventory.find({tags: {$nin:["book","electronics"]}})
+
+// operators for arrays only
+
+//db.inventory.find({tags:"book"})
+//tiene en cuenta el orden o la posicion en que se da la busqueda
+/* db.inventory.find({tags:["school","book"]})
+db.inventory.find({tags:["book","school"]})
+ */
+
+// array $all que tenga los dos items sin importar el orden o la posicion
+//db.inventory.find({tags: {$all:["book","school"]}})
+
+// $size - el tamaño del array
+//db.inventory.find({tags: {$size:2}})
+
+// $elemMatch un elemento en especifico
+//db.survey.find({results:{$elemMatch: {product:"xyz"}}})
+
+db.survey.find({
+    results:{
+        $elemMatch: {
+            product:"xyz",
+            score:{$gte:7}
+        }}
+    })
