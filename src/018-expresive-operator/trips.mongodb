@@ -10,9 +10,8 @@ db.trips.find({
     $expr:{
         $and: [
             {$eq:["$start station id","$end station id"]},
-            {tripduration: {$gte:1200}}
-
-
+            //{tripduration: {$gte:1200}} error
+            {$gte:["$tripduration",1200]}
         ]
     }
-}).count() //316
+}).count() //173
